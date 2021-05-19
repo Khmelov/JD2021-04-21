@@ -29,18 +29,23 @@ public class TaskC {
        ArrayList<Integer> list1 = new ArrayList<Integer>();
        ArrayList<Integer> list2 = new ArrayList<Integer>();
        ArrayList<Integer> list3 = new ArrayList<Integer>();
+       boolean isFull = false;
        for (int i = 0; i < arr.length; i++) {
            for (int j = 0; j < arr.length; j++) {
-               if (arr[i][j] > 0 && i == 0) list1.add(arr[i][j]);
-               if (arr[i][j] > 0 && i == 1) list2.add(arr[i][j]);
-               if (arr[i][j] > 0 && i == 2) list3.add(arr[i][j]);
+               for (int k = 0; k < arr.length; k++) {
+                  if(list2.size()>2) continue;
+               }
 
            }
        }
-       for (int i = 0; i < arr.length; i++) {
-           for (int j = 0; j < arr.length; j++) {
 
-           }
-       }
+//       if (arr[i][j] > 0 && i == 0) list1.add(arr[i][j]);
+//       if (arr[i][j] > 0 && i == 1) list2.add(arr[i][j]);
+////       if (arr[i][j] > 0 && i == 2) list3.add(arr[i][j]);
+//       for (int i = 0; i < arr.length; i++) {
+//           for (int j = 0; j < arr.length; j++) {
+//
+//           }
+//       }
    }
 }

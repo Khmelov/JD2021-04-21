@@ -1,6 +1,9 @@
 package by.it.labovka.test;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 //Ввести с клавиатуры строку name.
 //Ввести с клавиатуры дату рождения (три числа): y, m, d.
 //
@@ -11,13 +14,12 @@ import java.util.Scanner;
 //Пример вывода:
 public class fffs {
     public static void main(String[] args) {
-Scanner sc = new Scanner(System.in);
-String name = sc.nextLine();
-int y = sc.nextInt();
-int m = sc.nextInt();
-int d = sc.nextInt();
-        System.out.printf("Меня зовут %s.\nЯ родился %d.%d.%d", name, d, m, y);
-        }
-
+        Pattern p = Pattern.compile("g");
+        Matcher m = p.matcher("fffggg");
+while(m.find())
+{
+    System.out.print(m.start()+ " " + m.group() + " ");
+}
     }
+}
 

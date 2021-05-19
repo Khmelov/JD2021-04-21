@@ -36,16 +36,16 @@ ght должен правильно переводить вес тела в ки
 class TaskC3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int vesNaZemle = sc.nextInt();
+        double vesNaZemle = sc.nextInt();
         System.out.printf("%.2f",getWeight(vesNaZemle));
     }
-   public static double getWeight(int weight)
+   public static double getWeight(double weight)
     {
-double massa = (double)weight/9.81;
+double massa = weight/9.81;
 double vesMars = massa*3.86;
-//int c = (int)(vesMars*100);
-//double d = c*0.01;
+int c = (int)(vesMars*100);
+double d = c*0.01;
 
-return vesMars ;
+return d ;
     }
 }

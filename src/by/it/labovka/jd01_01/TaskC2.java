@@ -23,27 +23,26 @@ class TaskC2 {
        Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        System.out.printf("DEC:%d+%d=%d\n", a, b, a+ b);
-        System.out.printf("BIN:%d+%d=%d\n", toBinary(a), toBinary(b), toBinary(a+b));
-        System.out.printf("HEX:%d+%d=%d\n", toOctal(a), toOctal(b), toOctal(a+ b));
-        System.out.printf("OCT:%d+%d=%d\n", toHex(a), toHex(b), toHex(a+ b));
-        Integer number = 255;
+        System.out.println("DEC:" + a + "+" + b +  "=" + (a+ b));
+        System.out.println("BIN:" + Integer.toBinaryString(a) + "+" +   Integer.toBinaryString(b) + "=" + Integer.toBinaryString(a+b));
+        System.out.println("HEX:" + Integer.toHexString(a) + "+" + Integer.toHexString(b) + "=" + Integer.toHexString(a+b));
+        System.out.println("OCT:" + Integer.toOctalString(a) + "+" + Integer.toOctalString(b) + "=" + Integer.toOctalString(a+b));
 
 
     }
-public static int toBinary(int number)
-{
-    String convert = Integer.toBinaryString(number);
-    return Integer.parseInt(convert, 2);
-}
-    public static int toOctal(int number)
-    {
-        String convert = Integer.toOctalString(number);
-        return Integer.parseInt(convert, 8);
-    }
-    public static int toHex(int number)
-    {
-        String convert = Integer.toHexString(number).toUpperCase();
-        return Integer.parseInt(convert,16);
-    }
+//public static int toBinary(int number)
+//{
+//    String convert = Integer.toBinaryString(number);
+//    return Integer.parseInt(convert, 2);
+//}
+//    public static int toOctal(int number)
+//    {
+//        String convert = Integer.toOctalString(number);
+//        return Integer.parseInt(convert, 8);
+//    }
+//    public static int toHex(int number)
+//    {
+//        String convert = Integer.toHexString(number).toUpperCase();
+//        return Integer.parseInt(convert,16);
+//    }
 }

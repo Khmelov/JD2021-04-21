@@ -1,13 +1,13 @@
 package by.it.labovka.jd01_07;
 
-class Scalar extends AbstractVar {
+class Scalar extends Var {
     double d ;
 
     public double getD() {
         return d;
     }
 
-    public Scalar(Double d) {
+    public Scalar(double d) {
 this.d=d;
     }
 

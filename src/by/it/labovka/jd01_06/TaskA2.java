@@ -12,7 +12,7 @@ public class TaskA2 {
     private static String[] w = {};
     private static int[] count = {};
 
-    public static int pos(String word) {
+    private static int pos(String word) {
         for (int i = 0; i < w.length; i++) {
             if (w[i].equals(word))
                 return i;
@@ -21,9 +21,7 @@ public class TaskA2 {
     }
 
     public static void main(String[] args) {
-
-
-        Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]{4,}");
+        Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]+");
         Matcher matcher = pattern.matcher(Poem.text);
         while (matcher.find()) {
             String word = matcher.group();

@@ -23,18 +23,19 @@ this.value = vector.getValue();
 
  Vector(String strVector)
  {
-  strVector.trim();
-  String[] str = (strVector.substring(1,strVector.length()-1)).split(",");
-  for (int i = 0; i <str.length ; i++) {
-//   System.out.println(str[i]);
-//   System.out.println(str.length);
-  }
+
+  String[] str = strVector.trim().substring(1,strVector.length()-1).split(",");
+
   double[] a = new double[str.length];
-  for (int i = 1; i < str.length-1; i++) {
+  for (int i = 0; i < str.length; i++) {
       a[i] = Double.parseDouble(str[i]);
      }
-  this.value = a;
 
+  this.value = a;
+//  for (int i = 0; i <value.length ; i++) {
+//   System.out.println(value[i]);
+// //  System.out.println(value.length);
+//  }
 
  }
  @Override
@@ -43,7 +44,7 @@ this.value = vector.getValue();
   String delimeter = "";
   for(double s : value)
   {
-   sb.append(delimeter).append(value.toString());
+   sb.append(delimeter).append(s);
    delimeter = ", ";
   }
   sb.append("}");

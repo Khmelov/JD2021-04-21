@@ -14,12 +14,11 @@ import java.util.regex.Pattern;
 //Пример вывода:
 public class fffs {
     public static void main(String[] args) {
-        Pattern p = Pattern.compile("g");
-        Matcher m = p.matcher("fffggg");
-while(m.find())
-{
-    System.out.print(m.start()+ " " + m.group() + " ");
-}
+      Animal dog1= new Dog();
+      Dog dog2 = new Dog();
+        dog1.eat();
+        dog2.eat();
+
     }
 }
 

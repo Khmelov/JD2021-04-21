@@ -6,7 +6,7 @@ public class Runner {
 //        AbstractVar v2 = new Vector();
        Var v1 = new  Vector("{1,2,4}");
         Var v2 = new  Vector(new double[]{1,2,4});
-        System.out.println(v1.toString());
-        v2.toString();
+        System.out.println(v1);
+        System.out.println(v2);
     }
 }

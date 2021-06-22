@@ -1,9 +1,6 @@
 package by.it.mogonov.jd01_12;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class TaskB2 {
 
@@ -22,16 +19,16 @@ public class TaskB2 {
     }
 
     static String process(ArrayList<String> peoples) {
-
+        boolean isSecond = false;
         while (peoples.size() > 1) {
-            for (int i = 0; i < peoples.size(); i++) {
-
-                if (i % 2 != 0) {
-                    peoples.remove(i);
+            Iterator<String> iterator = peoples.iterator();
+            while (iterator.hasNext()) {
+                iterator.next();
+                if (isSecond) {
+                    iterator.remove();
                 }
-
+                isSecond = !isSecond;
             }
-
 
         }
         return peoples.get(0);
@@ -40,17 +37,17 @@ public class TaskB2 {
 
     static String process(LinkedList<String> peoples) {
 
-
+        boolean isSecond = false;
         while (peoples.size() > 1) {
-            for (int i = 0; i < peoples.size(); i++) {
-
-                if (i % 2 != 0) {
-                    peoples.remove(i);
+            Iterator<String> iterator = peoples.iterator();
+            while (iterator.hasNext()) {
+                iterator.next();
+                if (isSecond) {
+                    iterator.remove();
                 }
-
+                isSecond = !isSecond;
             }
-
         }
-        return peoples.get(0);
+        return peoples.getFirst();
     }
 }

@@ -10,7 +10,7 @@ public class TaskA {
     private static final Random RANDOM = new Random();
 
     public static void main(String[] args) {
-
+        Locale.setDefault(Locale.ENGLISH);
         String fileName = PathCreator.getFileName(TaskA.class, FILENAME);
         String txtName = PathCreator.getFileName(TaskA.class, RESULT_TXT);
 
@@ -22,7 +22,7 @@ public class TaskA {
 
     private static void printTxt(String txtName, List<Integer> integerList) {
         try (
-                PrintWriter out = new PrintWriter(txtName);
+                PrintWriter out = new PrintWriter(txtName)
         ) {
             double sum2 = 0;
             for (Integer integer : integerList) {
@@ -65,7 +65,7 @@ public class TaskA {
                 try {
                     dataInputStream.close();
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
             }
         }
@@ -88,6 +88,4 @@ public class TaskA {
             throw new RuntimeException(e);
         }
     }
-
-
 }

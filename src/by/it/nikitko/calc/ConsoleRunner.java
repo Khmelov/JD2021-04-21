@@ -45,21 +45,25 @@ public class ConsoleRunner {
     }
 
     private static void switchLocale(String enteredString) {
+        Locale locale;
         switch (enteredString) {
-            case ("ru") -> {
-                Locale locale = new Locale("ru", "RU");
+            case ("ru"): {
+                locale = new Locale("ru", "RU");
                 manager.setLocale(locale);
                 System.out.println(ConsoleRunner.manager.get(Messages.LANGUAGE_IS_SET));
+                break;
             }
-            case ("en") -> {
-                Locale locale = new Locale("en", "US");
+            case ("en"): {
+                locale = new Locale("en", "US");
                 manager.setLocale(locale);
                 System.out.println(ConsoleRunner.manager.get(Messages.LANGUAGE_IS_SET));
+                break;
             }
-            case ("be") -> {
-                Locale locale = new Locale("be", "BY");
+            case ("be"): {
+                locale = new Locale("be", "BY");
                 manager.setLocale(locale);
                 System.out.println(ConsoleRunner.manager.get(Messages.LANGUAGE_IS_SET));
+                break;
             }
         }
 

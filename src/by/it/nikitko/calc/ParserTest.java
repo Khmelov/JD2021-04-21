@@ -1,7 +1,9 @@
 package by.it.nikitko.calc;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,7 +12,7 @@ class ParserTest {
 
     private Parser parser;
 
-    @BeforeEach
+    @Before
     void setUp() {
         parser=new Parser();
     }

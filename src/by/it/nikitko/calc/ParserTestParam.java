@@ -1,7 +1,8 @@
 package by.it.nikitko.calc;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -32,7 +33,7 @@ public class ParserTestParam {
         return Arrays.asList(data);
     }
 
-    @BeforeEach
+    @Before
     void setUp() {
         parser = new Parser();
     }

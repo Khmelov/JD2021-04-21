@@ -1,20 +1,8 @@
 package by.it.nikitko.calc;
 
-import java.util.HashMap;
-import java.util.Map;
 
 abstract class Var implements Operation {
 
-    private static Map<String, Var> vars = new HashMap<>();
-
-    public static Map<String, Var> getVars() {
-        return vars;
-    }
-
-    static Var saveVar(String name, Var var) {
-        vars.put(name, var);
-        return var;
-    }
 
     static Var createVar(String expression) throws CalcException {
         expression = expression.replaceAll("\\s+", "");
@@ -23,35 +11,42 @@ abstract class Var implements Operation {
             return new Scalar(expression);
         if (expression.matches(Patterns.VECTOR))
             return new Vector(expression);
-        if (expression.matches(Patterns.MATRIX))
+        if (expression.matches(Patterns.MATRIX)) {
             return new Matrix(expression);
-        if (vars.containsKey(expression))
-            return vars.get(expression);
-        throw new CalcException("Incorrect expression");
-
+        } else {
+            if (VarRepo.contain(expression)) {
+                return VarRepo.load(expression);
+            } else {
+                throw new CalcException(ConsoleRunner.manager.get(Messages.INCORRECT_EXPRESSION));
+            }
+        }
     }
 
     @Override
     public Var add(Var other) throws CalcException {
-        throw new CalcException("Operation additions " + this + "+" + other + " is impossible");
+        throw new CalcException(ConsoleRunner.manager.get(Messages.OPERATION_ADDITIONS)+" " + this + "+" + other +
+                ConsoleRunner.manager.get(Messages.IS_IMPOSSIBLE));
 
     }
 
     @Override
     public Var sub(Var other) throws CalcException {
-        throw new CalcException("Operation subtraction " + this + "-" + other + " is impossible");
+        throw new CalcException(ConsoleRunner.manager.get(Messages.OPERATION_SUBTRACTION)+" " + this + "-" + other +
+                ConsoleRunner.manager.get(Messages.IS_IMPOSSIBLE));
 
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
-        throw new CalcException("Operation multiplication " + this + "*" + other + " is impossible");
+        throw new CalcException(ConsoleRunner.manager.get(Messages.OPERATION_MULTIPLICATION)+" " + this + "*" + other +
+                ConsoleRunner.manager.get(Messages.IS_IMPOSSIBLE));
 
     }
 
     @Override
     public Var div(Var other) throws CalcException {
-        throw new CalcException("Division operation " + this + "/" + other + " is impossible");
+        throw new CalcException(ConsoleRunner.manager.get(Messages.OPERATION_DIVISION)+" " + this + "/" + other +
+                ConsoleRunner.manager.get(Messages.IS_IMPOSSIBLE));
 
     }
 }

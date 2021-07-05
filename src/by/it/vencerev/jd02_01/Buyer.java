@@ -20,6 +20,11 @@ public class Buyer extends Thread implements IBuyer{
     }
 
     @Override
+    public void goToQueue() {
+
+    }
+
+    @Override
     public void enterToMarket() {
         System.out.println(this + " entered the market");
     }

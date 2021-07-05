@@ -13,7 +13,7 @@ public class TimerHelper {
     static int random(int max){
         return random(0,max);
     }
-    static void sleep (int timeout){
+    public static void sleep(int timeout){
             try {
                 Thread.sleep(timeout/Config.K_SPEED);
             } catch (InterruptedException e) {

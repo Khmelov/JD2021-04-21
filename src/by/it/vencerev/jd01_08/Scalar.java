@@ -18,10 +18,8 @@ class Scalar extends Var {
             double sum = this.value + ((Scalar) other).value;
             return new Scalar(sum);
 
-        } else {
-            Var add = this.add(other);
-            return add;
-        }
+        } else
+            return this.add(other);
 
     }
 
@@ -31,7 +29,7 @@ class Scalar extends Var {
             double result = this.value - ((Scalar) other).value;
             return new Scalar(result);
         }
-            return other.sub(this);
+            return this.sub(other);
 
     }
 
@@ -41,7 +39,9 @@ class Scalar extends Var {
             double mul = this.value * ((Scalar) other).value;
             return new Scalar(mul);
 
-        } else return other.mul(this);
+        } else {
+            return this.mul(other);
+        }
     }
 
     @Override
@@ -50,7 +50,8 @@ class Scalar extends Var {
             double div = this.value / ((Scalar) other).value;
             return new Scalar(div);
         }
-        return super.div(other);
+        else
+            return super.div(other);
     }
 
 

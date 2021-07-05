@@ -2,9 +2,9 @@ package by.it.vencerev.jd02_01;
 
 import java.util.Random;
 
-public class RandomHeper {
+public class RandomHelper {
 
-    private static final RANDOM = new Random();
+    private static final Random RANDOM = new Random();
     static int random(int min, int max) {
         return min + RANDOM.nextInt(max - min + 1);
     }

@@ -23,7 +23,7 @@ public class Market {
         List<Buyer> buyers = new ArrayList<>();
         int number = 0;
         for (int time = 0; time < Config.MAX_TIME ; time++) {
-            int countBuyerPerSecond = RandomHeper.random(2);
+            int countBuyerPerSecond = RandomHelper.random(2);
             for (int i = 0; i < countBuyerPerSecond; i++) {
 
             }

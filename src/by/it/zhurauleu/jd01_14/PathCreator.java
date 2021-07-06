@@ -13,9 +13,8 @@ class PathCreator {
     static String getFileName(Class<?> aClass, String fileName) {
 
         String workingDirectory = System.getProperty(USER_DIR);
-        Class<TaskA> taskAClass = TaskA.class;
-        String path = taskAClass.getName()
-                .replace(taskAClass.getSimpleName(), "")
+        String path = aClass.getName()
+                .replace(aClass.getSimpleName(), "")
                 .replace(".", File.separator);
         return workingDirectory + File.separator + SRC + File.separator + path + fileName;
     }

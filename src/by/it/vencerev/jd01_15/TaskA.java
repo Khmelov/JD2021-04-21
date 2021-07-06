@@ -1,66 +1,69 @@
 package by.it.vencerev.jd01_15;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Random;
 
-public class TaskA {
-    private static Random RANDOM = new Random();
-    private static final String TEXT_FILE = "matrix.txt";
+import static by.it.vencerev.jd01_15.PathCreator.getPath;
+
+/*public class TaskA {
+    private static Random random = new Random();
+    private static final Random RANDOM = new Random();
 
     public static void main(String[] args) {
         int[][] matrix = new int[6][4];
         fillMatrix(matrix);
-        String text = PathCreator.getFileName(TaskA.class, TEXT_FILE);
-        writeFile(text, matrix);
-        //readFile(text);
-        readFile2(text);
-
+        String fileName = getPath(TaskA.class) + "matrix.txt";
+        printMatrixTXT(matrix, fileName);
+        readToConsole(fileName);
+        readToConsole(fileName);
     }
 
-    private static void readFile2(String text) {
-        try {
-            Files
-                    .lines(Path.of(text))
-                    .forEach(System.out::println);
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+    private static void printMatrixTXT(int[][] matrix, String fileName) {
     }
 
-    private static void readFile(String text) {
-        String string;
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(text))
-        ) {
-            while ((string = bufferedReader.readLine()) != null) {
-                System.out.println(string);
-            }
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+    private static void readToConsole(String fileName) {
     }
 
     private static void fillMatrix(int[][] matrix) {
-        for (int[] array : matrix) {
-            for (int i = 0; i < array.length; i++) {
-                array[i] = -15 + RANDOM.nextInt(31);
-            }
-        }
     }
 
-    private static void writeFile(String text, int[][] matrix) {
-        try (PrintWriter printWriter = new PrintWriter(text)
-        ) {
-            for (int[] array : matrix) {
-                for (int j : array) {
-                    printWriter.printf("%3d ", j);
+    private static void readToConsole ( int[][] matrix, String fileName) throws IOException {
+        try ( FileReader fileReader=new FileReader(fileName)){
+            for (int[] row : matrix){
+                for (int element : row){
+                    System.out.printf("%3d",element);
                 }
-                printWriter.println();
-            }
+                System.out.println();
+                private static void readToConsole ( String, fileName) {
+                    try (BufferedReader fileReader =new BufferedReader(new FileReader(fileName))){
+                        String line=fileReader.readLine();
+                        while (line!=null){
+                            System.out.println(line);
+                            line=fileReader.readLine();
+                        }
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-}
+                    } catch (IOException e) {
+                        new RuntimeException(e);
+                        e.printStackTrace();
+                    }
+                }
+                private static void printMatrixTXT(int[][] matrix, String fileName) {
+
+                    try ( PrintWriter printWriter= new PrintWriter(fileName)){
+                        for (int[] row : matrix)
+                            for (int element : row) {
+                                private static void printMatrixTXT ( int[][] matrix, String fileName){
+                                    private static void fillMatrix ( int[][] matrix){
+                                        for (int[] row : matrix) {
+                                            for (int i = 0; i < row.length; i++) {
+                                                row[i] = -15 + random.nextInt(31);
+                                                row[i] = -15 + RANDOM.nextInt(31);
+
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+
+ */

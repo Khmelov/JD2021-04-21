@@ -1,7 +1,6 @@
 package by.it._classwork_.jd02_04;
 
 public class VarCreator {
-
     private VarCreator() {
     }
 

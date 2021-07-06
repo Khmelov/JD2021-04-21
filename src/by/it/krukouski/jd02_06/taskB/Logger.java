@@ -1,43 +1,33 @@
-package by.it.krukouski.jd02_06.taskA;
+package by.it.krukouski.jd02_06.taskB;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Logger {
-    private static volatile Logger logger;
+public enum Logger {
+    INSTANCE;
+
     private static final String FILE_NAME = "log.txt";
 
-    private Logger() {
+
+    static Logger getLogger() {
+        return INSTANCE;
     }
 
-    public static Logger getLogger() {
-      Logger local = logger;
-        if (local == null) {
-            synchronized (FILE_NAME) {
-                local = logger;
-                if (local == null) {
-                    local = logger = new Logger();
-                }
-            }
-        }
-        return local;
-    }
 
-    @SuppressWarnings("SameParameterValue")
     void log(String message) {
-        String fileName = getFileName(Logger.class, Logger.FILE_NAME);
-        try (PrintWriter printWriter = new PrintWriter(new FileWriter(fileName, true))) {
+        String fileName = getFileName(Logger.class, FILE_NAME);
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(fileName, true))
+        ) {
             printWriter.println(message);
             printWriter.flush();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-
     }
+
 
     @SuppressWarnings("SameParameterValue")
     static String getFileName(Class<?> nameClass, String fileName) {
@@ -49,5 +39,6 @@ public class Logger {
         return root + File.separator + "src" + File.separator + path + fileName;
 
     }
+
 
 }

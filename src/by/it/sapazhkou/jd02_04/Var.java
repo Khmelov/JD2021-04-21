@@ -2,43 +2,32 @@ package by.it.sapazhkou.jd02_04;
 
 abstract class Var implements Operation {
 
-    static Var createVar(String operand) {
 
-        operand = operand.trim().replace(" ", "");
-        if (operand.matches(Patterns.SCALAR)) {
-            return new Scalar(operand);
-        }
-        if (operand.matches(Patterns.VECTOR)) {
-            return new Vector(operand);
-        }
-        if (operand.matches(Patterns.MATRIX)) {
-            return new Matrix(operand);
-        }
-        return null;
-    }
-
-
-    @Override
-    public Var add(Var other) {
-        System.out.println("Операция " + this + " и " + other + " не может быть выполена");
-        return null;
+    public Var(){
+        super();
     }
 
     @Override
-    public Var sub(Var other) {
-        System.out.println("Операция " + this + " и " + other + " не может быть выполена");
-        return null;
+    public Var add(Var other) throws CalcException {
+        String message = String.format("Operation %s + %s impossible\n", this, other);
+        throw new CalcException(message);
     }
 
     @Override
-    public Var mul(Var other) {
-        System.out.println("Операция " + this + " и " + other + " не может быть выполена");
-        return null;
+    public Var sub(Var other) throws CalcException {
+        String message = String.format("Operation %s - %s impossible\n", this, other);
+        throw new CalcException(message);
     }
 
     @Override
-    public Var div(Var other) {
-        System.out.println("Операция " + this + " и " + other + " не может быть выполена");
-        return null;
+    public Var mul(Var other) throws CalcException {
+        String message = String.format("Operation %s * %s impossible\n", this, other);
+        throw new CalcException(message);
+    }
+
+    @Override
+    public Var div(Var other) throws CalcException{
+        String message = String.format("Operation %s / %s impossible\n", this, other);
+        throw new CalcException(message);
     }
 }

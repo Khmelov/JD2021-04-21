@@ -45,13 +45,6 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
             System.out.printf("Buyer №%5d go to queue\n", number);
             store.getQueueBuyers().add(this);
             cashierToWork();
-            try {
-                waitFlag=true;
-                this.wait();
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -109,18 +102,18 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
     }
 
     private void cashierToWork() {
-        synchronized (this) {
+       // synchronized (this) {
             int cashierNeededToWork = (int) Math.ceil(store.getQueueBuyers().getQueueSize() / Config.QUEUE_LENGTH);
             int cashierWorked = QueueCashiers.getCashierWorked();
             while (QueueCashiers.getQueueSize() > 0 & cashierWorked < cashierNeededToWork) {
                 Cashier cashier = QueueCashiers.poll();
                 synchronized (cashier.getMonitor()) {
                     cashierWorked=QueueCashiers.getCashierWorked();
-                    cashier.setWaitFlag(false);
+                    //cashier.setWaitFlag(false);
                     cashier.notify();
                 }
             }
-        }
+       //}
     }
 
 

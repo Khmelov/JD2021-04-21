@@ -1,8 +1,6 @@
 package by.it.nikitko.jd02_06;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class Logger {
     private static final String LOG_TXT = "log.txt";
@@ -28,7 +26,8 @@ public class Logger {
     void log (String message){
         String path = PathCreator.getFileName(Logger.class,LOG_TXT);
         try {
-            PrintWriter printWriter = new PrintWriter(new FileWriter(path));
+            PrintWriter printWriter = new PrintWriter(new FileWriter(path,true));
+            printWriter.println(message);
         } catch (IOException e) {
             e.printStackTrace();
         }

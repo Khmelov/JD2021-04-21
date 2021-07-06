@@ -1,4 +1,4 @@
-package by.it.krukouski.jd02_06.taskB;
+package by.it.krukouski.jd02_06.taskC;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -10,7 +10,6 @@ public class ConsoleRunner {
         ResMan manager = ResMan.INSTANCE;
         Printer printer = new Printer();
         Parser parser = new Parser();
-        Logger logger = Logger.INSTANCE;
         Scanner scanner = new Scanner(System.in);
         /*System.out.println("Choose language: be en ru");
         String language = scanner.nextLine();
@@ -30,11 +29,9 @@ public class ConsoleRunner {
          */
         for (; ; ) {
             String expression = scanner.nextLine();
-            logger.log(expression);
             if (!expression.equals(KEY_WORD)) {
                 try {
-
-
+                    Logger.getLogger().log(expression);
                     Var var = parser.calc(expression);
                     printer.print(var);
                 } catch (CalcException e) {

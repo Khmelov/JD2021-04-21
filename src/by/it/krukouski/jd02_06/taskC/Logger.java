@@ -1,18 +1,25 @@
-package by.it.krukouski.jd02_06.taskB;
+package by.it.krukouski.jd02_06.taskC;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public enum Logger {
-    INSTANCE;
+public class Logger {
+    public static class LoggerNested{
+        public static final Logger LOGGER_INSTANCE = new Logger();
+    }
+
+    private Logger() {
+    }
 
     private static final String FILE_NAME = "log.txt";
 
+    static Logger getLogger(){
+        return LoggerNested.LOGGER_INSTANCE;
+    }
 
-
-    void log(String message) {
+    void log(String message){
         String fileName = getFileName(Logger.class, FILE_NAME);
         try (PrintWriter printWriter = new PrintWriter(new FileWriter(fileName, true))
         ) {
@@ -24,7 +31,6 @@ public enum Logger {
 
     }
 
-
     @SuppressWarnings("SameParameterValue")
     static String getFileName(Class<?> nameClass, String fileName) {
         String root = System.getProperty("user.dir");
@@ -35,6 +41,8 @@ public enum Logger {
         return root + File.separator + "src" + File.separator + path + fileName;
 
     }
+
+
 
 
 }

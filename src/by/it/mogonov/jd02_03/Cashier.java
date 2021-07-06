@@ -23,7 +23,7 @@ public class Cashier implements Runnable {
                 Timer.sleep(timeService);
                 synchronized (currentPurchaser.getMonitor()) {
                     currentPurchaser.setWaitFlag(false);
-                    currentPurchaser.notify();
+                    currentPurchaser.notifyAll();
                 }
                 korona.getManager().complitePurchaser();
                 System.out.println(this + "finish service " + currentPurchaser);

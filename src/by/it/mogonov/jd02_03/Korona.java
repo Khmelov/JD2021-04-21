@@ -33,9 +33,8 @@ public class Korona {
 
 
         int numberPurchasers = 0;
-        while (manager.koronaOpened()) {
+        while (manager.koronaOpened()&& numberPurchasers < 100) {
             int countPurchaserPerSecond = Randomaser.random(2);
-
 
             for (int i = 0; i < countPurchaserPerSecond && manager.koronaOpened(); i++) {
                 Purchaser purchaser = new Purchaser(++numberPurchasers, this);

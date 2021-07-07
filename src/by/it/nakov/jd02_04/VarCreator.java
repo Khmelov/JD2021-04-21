@@ -9,9 +9,11 @@ public class VarCreator {
             return new Scalar(stringVar);
         } else if (stringVar.matches(Patterns.VECTOR)) {
             return new Vector(stringVar);
-        } else if (stringVar.matches(Patterns.MATRIX)) {
-            return new Matrix(stringVar);
-        } else {
+        }
+//        else if (stringVar.matches(Patterns.MATRIX)) {
+//            return new Matrix(stringVar);
+//        }
+        else {
             if (VarRepo.contain(stringVar)) {
                 return VarRepo.load(stringVar);
             } else {

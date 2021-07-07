@@ -1,0 +1,4 @@
+messages.welcome=Прывитанне!
+messages.question=Як справы?
+user.firstname=Аляксандр
+user.lastname=Венцарау

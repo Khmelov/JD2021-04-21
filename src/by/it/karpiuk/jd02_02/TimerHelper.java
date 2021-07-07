@@ -1,4 +1,4 @@
-package by.it.karpiuk.jd02_01;
+package by.it.karpiuk.jd02_02;
 
 public class TimerHelper {
 

@@ -1,12 +1,12 @@
 package by.it.krukouski.jd02_06.taskC;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class Time {
-    LocalTime localTime;
+    LocalDateTime localDateTime;
 
     public String getTime(){
-        this.localTime=LocalTime.now();
-        return localTime.getHour() + ":" + localTime.getMinute() + ":" + localTime.getSecond();
+        this.localDateTime=LocalDateTime.now();
+        return localDateTime.toString();
     }
 }

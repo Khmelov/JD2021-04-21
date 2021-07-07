@@ -49,7 +49,7 @@ public class Matrix extends Var {
             }
             return new Matrix(resultMatrix);
         } else if (other instanceof Vector) {
-            throw new CalcException(ResMan.INSTANCE.get(Errors.sumImpossible));
+            throw new CalcException(ConsoleRunner.manager.get(Errors.sumImpossible));
         } else if (other instanceof Matrix) {
             double[][] resultMatrixFirst = new double[this.ARRAY.length][this.ARRAY[0].length];
             for (int i = 0; i < this.ARRAY.length; i++) {
@@ -65,7 +65,7 @@ public class Matrix extends Var {
                     }
                 }
             } else {
-                throw new CalcException(ResMan.INSTANCE.get(Errors.differentLengthMatrix));
+                throw new CalcException(ConsoleRunner.manager.get(Errors.differentLengthMatrix));
             }
             return new Matrix(resultMatrixFirst);
 
@@ -93,7 +93,7 @@ public class Matrix extends Var {
         }
 
         if (other instanceof Vector) {
-            throw new CalcException(ResMan.INSTANCE.get(Errors.sumImpossible));
+            throw new CalcException(ConsoleRunner.manager.get(Errors.sumImpossible));
         }
 
         if (other instanceof Matrix) {
@@ -111,7 +111,7 @@ public class Matrix extends Var {
                     }
                 }
             } else {
-                throw new CalcException(ResMan.INSTANCE.get(Errors.differentLengthMatrix));
+                throw new CalcException(ConsoleRunner.manager.get(Errors.differentLengthMatrix));
             }
             return new Matrix(resultMatrixFirst);
         }
@@ -174,7 +174,7 @@ public class Matrix extends Var {
                     }
                 }
             } else {
-                throw new CalcException(ResMan.INSTANCE.get(Errors.differentLengthMatrix));
+                throw new CalcException(ConsoleRunner.manager.get(Errors.differentLengthMatrix));
             }
             return new Matrix(matrixResult);
 

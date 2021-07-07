@@ -44,7 +44,7 @@ public class Vector extends Var {
                     firstVector[i] += ((Vector) other).ARRAY[i];
                 }
             } else {
-                throw new CalcException(ResMan.INSTANCE.get(Errors.differentLengthVectors));
+                throw new CalcException(ConsoleRunner.manager.get(Errors.differentLengthVectors));
             }
             return new Vector(firstVector);
         }
@@ -68,7 +68,7 @@ public class Vector extends Var {
                     firstVector[i] -= ((Vector) other).ARRAY[i];
                 }
             } else {
-                throw new CalcException(ResMan.INSTANCE.get(Errors.differentLengthVectors));
+                throw new CalcException(ConsoleRunner.manager.get(Errors.differentLengthVectors));
             }
             return new Vector(firstVector);
         }
@@ -93,7 +93,7 @@ public class Vector extends Var {
                     sum += firstVector[i] * secondVector[i];
                 }
             } else {
-                throw new CalcException(ResMan.INSTANCE.get(Errors.differentLengthVectors));
+                throw new CalcException(ConsoleRunner.manager.get(Errors.differentLengthVectors));
             }
             return new Scalar(sum);
         }
@@ -106,7 +106,7 @@ public class Vector extends Var {
             double[] firstVector = Arrays.copyOf(ARRAY, ARRAY.length);
             double scalar = ((Scalar) other).getScalar();
             if (scalar == 0) {
-                throw new CalcException(ResMan.INSTANCE.get(Errors.divisionByZero));
+                throw new CalcException(ConsoleRunner.manager.get(Errors.divisionByZero));
             } else {
                 for (int i = 0; i < firstVector.length; i++) {
                     firstVector[i] /= scalar;
@@ -116,7 +116,7 @@ public class Vector extends Var {
         }
 
         if (other instanceof Vector) {
-            throw new CalcException(ResMan.INSTANCE.get(Errors.divisionImpossible));
+            throw new CalcException(ConsoleRunner.manager.get(Errors.divisionImpossible));
         }
         return super.div(other);
     }

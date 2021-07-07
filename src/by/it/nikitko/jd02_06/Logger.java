@@ -28,8 +28,9 @@ public class Logger {
         try {
             PrintWriter printWriter = new PrintWriter(new FileWriter(path,true));
             printWriter.println(message);
+            printWriter.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }

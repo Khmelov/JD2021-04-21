@@ -11,8 +11,8 @@ public class ConsoleRunner {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         String enteredString;
-        Parser parser = new Parser();
         VarRepo.loadVars();
+        Parser parser = new Parser();
         Printer printer = new Printer();
         setLocalFromArgs(args);
 

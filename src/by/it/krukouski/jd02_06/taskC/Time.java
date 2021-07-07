@@ -1,12 +1,16 @@
 package by.it.krukouski.jd02_06.taskC;
 
-import java.time.LocalDateTime;
+import java.util.Calendar;
 
 public class Time {
-    LocalDateTime localDateTime;
+
+
+    Calendar calendar;
 
     public String getTime(){
-        this.localDateTime=LocalDateTime.now();
-        return localDateTime.toString();
+        this.calendar=Calendar.getInstance();
+        return calendar.getTime().toString();
     }
+
+
 }

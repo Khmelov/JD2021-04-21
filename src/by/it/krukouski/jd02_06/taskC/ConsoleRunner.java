@@ -13,21 +13,17 @@ public class ConsoleRunner {
         Printer printer = new Printer();
         Parser parser = new Parser();
         Time time = new Time();
+//        WriterReport writerReport = new WriterReport();
+//        ReportBuilder reportBuilder = new MainReport();
+//        writerReport.setReportBuilder(reportBuilder);
+//        writerReport.constructReport();
+//        Report report = writerReport.getReportBuilder();
+//        System.out.println(report);
         Logger.getLogger().log("start program" + " " + time.getTime());
         chooseLanguage(scanner);
         System.out.println(manager.get(Errors.keyWord));
         calc(printer, parser, scanner);
-        createReport();
         Logger.getLogger().log("finish program" + " " + time.getTime());
-    }
-
-    private static void createReport() {
-        WriterReport writerReport = new WriterReport();
-        ReportBuilder reportBuilder = new MainReport();
-        writerReport.setReportBuilder(reportBuilder);
-        writerReport.constructReport();
-        Report report =writerReport.getReportBuilder();
-        System.out.println(report);
     }
 
     private static void calc(Printer printer, Parser parser, Scanner scanner) {

@@ -13,8 +13,10 @@ public class Parser {
             "*", 2, "/", 2
     );
 
-    Var calc(String expression) throws CalcException {
+    Logger logger = Logger.INSTANCE;
 
+    Var calc(String expression) throws CalcException {
+        logger.log(expression);
         expression = scopesFinder(expression);
 
         List<String> operands = new ArrayList<>(Arrays.asList(expression.split(Patterns.OPERATION)));
@@ -34,7 +36,10 @@ public class Parser {
             String result = calcOneOperation(left, operation, right).toString();
             operands.add(index, result);
         }
-        return Var.createVar(operands.get(0));
+        Var result = VarCreator.createVar(operands.get(0));
+        logger.log(result.toString());
+        return result;
+       // return Var.createVar(operands.get(0));
 
     }
 
@@ -53,14 +58,14 @@ public class Parser {
 
     private Object calcOneOperation(String leftString, String operationString, String rightString) throws CalcException {
 
-        Var right = Var.createVar(rightString);
+        Var right = VarCreator.createVar(rightString);
         if (operationString.equals("=")) {
             VarRepo.save(leftString, right);
             return right;
         }
-        Var left = Var.createVar(leftString);
+        Var left = VarCreator.createVar(leftString);
         if (left == null || right == null) {
-                throw new CalcException(ConsoleRunner.manager.get(Messages.INCORRECT_EXPRESSION));
+            throw new CalcException(ConsoleRunner.manager.get(Messages.INCORRECT_EXPRESSION));
         }
         switch (operationString) {
             case "+":
@@ -88,7 +93,7 @@ public class Parser {
         }
 
         while (expressionCharDeque.contains(')')) {
-            currentScopeSB.delete(0,currentScopeSB.length());
+            currentScopeSB.delete(0, currentScopeSB.length());
             char currentChar = expressionCharDeque.pollFirst();
             leftPartExpression.add(currentChar);
             if (currentChar == ')') {

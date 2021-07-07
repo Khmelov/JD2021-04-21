@@ -6,8 +6,7 @@ public class PathCreator {
     }
 
     public static String getPath(Class clazz) {
-        String path = clazz.getPackageName() + ".res.language";
-        return   path;
+        return clazz.getPackageName() + ".res.language";
 
     }
 }

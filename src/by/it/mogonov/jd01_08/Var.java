@@ -1,6 +1,7 @@
 package by.it.mogonov.jd01_08;
 
 abstract class Var implements Operation{
+
     @Override
     public Var add(Var other) {
         System.out.println("Операция сложения "+this+"+"+other+" невозможна");

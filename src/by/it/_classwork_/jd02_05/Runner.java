@@ -3,8 +3,6 @@ package by.it._classwork_.jd02_05;
 import java.util.Locale;
 
 public class Runner {
-
-
     public static void main(String[] args) {
         ResMan manager = ResMan.INSTANCE;
         if (args.length == 2) {

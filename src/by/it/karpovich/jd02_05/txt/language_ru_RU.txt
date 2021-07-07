@@ -1,4 +1,4 @@
-message.welcome=Привет!
-message.question=Как дела?
+messages.welcome=Привет!
+messages.question=Как дела?
 user.firstName=Владислав
 user.lastName=Карпович

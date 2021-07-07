@@ -1,4 +1,4 @@
-message.welcome=Hello!
-message.question=How are you?
-user.firstName=Vlad
-user.lastName=Karpovich
+messages.welcome=Hello!
+messages.question=How are you?
+user.firstname=Vlad
+user.lastname=Karpovich

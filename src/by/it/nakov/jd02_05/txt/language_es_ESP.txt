@@ -1,0 +1,4 @@
+messages.welcome= Hola!!
+messages.question=Que tal?
+user.firstname=Maks
+user.lastname=Nakov

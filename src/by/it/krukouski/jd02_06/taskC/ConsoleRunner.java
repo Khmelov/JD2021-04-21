@@ -10,7 +10,9 @@ public class ConsoleRunner {
         ResMan manager = ResMan.INSTANCE;
         Printer printer = new Printer();
         Parser parser = new Parser();
+        Time time = new Time();
         Scanner scanner = new Scanner(System.in);
+        Logger.getLogger().log("start program" + time.getTime());
         /*System.out.println("Choose language: be en ru");
         String language = scanner.nextLine();
         switch (language) {
@@ -31,7 +33,7 @@ public class ConsoleRunner {
             String expression = scanner.nextLine();
             if (!expression.equals(KEY_WORD)) {
                 try {
-                    Logger.getLogger().log(expression);
+                    Logger.getLogger().log("expression: " + expression + " " + time.getTime());
                     Var var = parser.calc(expression);
                     printer.print(var);
                 } catch (CalcException e) {

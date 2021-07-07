@@ -47,8 +47,7 @@ public class Scalar extends Var {
     public Var mul(Var other) throws CalcException {
         if (other instanceof Scalar) {
             double result = this.VALUE * ((Scalar) other).VALUE;
-            return new Scalar(result);
-        }
+            return new Scalar(result);        }
         return other.mul(this);
     }
 
@@ -56,7 +55,8 @@ public class Scalar extends Var {
     public Var div(Var other) throws CalcException {
         if (other instanceof Scalar) {
             if (((Scalar) other).VALUE == 0) {
-                throw new CalcException(ResMan.INSTANCE.get(Errors.divisionByZero));
+                throw new CalcException(ConsoleRunner.manager.get(Errors.divisionByZero));
+
             }
             double result = this.VALUE / ((Scalar) other).VALUE;
             return new Scalar(result);

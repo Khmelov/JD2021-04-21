@@ -5,14 +5,16 @@ import java.util.Scanner;
 
 public class ConsoleRunner {
     static final String KEY_WORD = "end";
+    public static ResMan manager = ResMan.INSTANCE;
+    public static Logger logger = Logger.INSTANCE;
+    public static Time time = new Time();
+
 
     public static void main(String[] args) throws CalcException {
-        ResMan manager = ResMan.INSTANCE;
         Printer printer = new Printer();
         Parser parser = new Parser();
-        Logger logger = Logger.INSTANCE;
         Scanner scanner = new Scanner(System.in);
-        /*System.out.println("Choose language: be en ru");
+        System.out.println("Choose language: be en ru");
         String language = scanner.nextLine();
         switch (language) {
             case "ru":
@@ -25,18 +27,16 @@ public class ConsoleRunner {
                 manager.set(new Locale("be", "BY"));
                 break;
         }
-        System.out.println(ResMan.INSTANCE.get(Errors.keyWord));
+        System.out.println(manager.get(Errors.keyWord));
 
-         */
         for (; ; ) {
             String expression = scanner.nextLine();
-            logger.log(expression);
             if (!expression.equals(KEY_WORD)) {
                 try {
-
-
+                    logger.log("expression: " + expression + " " + time.getTime());
                     Var var = parser.calc(expression);
                     printer.print(var);
+                    logger.log("result: " + var.toString() + " " + time.getTime());
                 } catch (CalcException e) {
                     System.out.println(e.getMessage());
                 }

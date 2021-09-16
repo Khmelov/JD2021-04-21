@@ -1,4 +1,0 @@
-messages.welcome=Прывітанне!
-messages.question=Як справы?
-user.firstname=Уладзiсka
-user.lastname=Карповiч

@@ -1,4 +1,0 @@
-user.firstname=Канстанцин
-user.lastname=Нарышкин
-message.welcome=Прывiтанне!
-message.question1=Як справы?
